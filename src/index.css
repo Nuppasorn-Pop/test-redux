@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0px;
+}
+
+.bg-custom {
+  background: hsl(20, 50%, 98%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 70px auto;
+  border-radius: 10px;
+}
+
+.bg-custom1 {
+ background: hsl(20, 50%, 98%);
+}
+
+.image-custom {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.image-custom img {
+  width: 100%;
+  height: 93%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+.image-custom img:hover {
+  overflow: hidden;
+  transition: all 1s;
+  transform: scale(1.05);
+  border: 5px solid;
+  background: linear-gradient(to right, hsl(14, 86%, 30%), hsl(14, 86%, 42%));
+  background-clip: padding-box; /* เพิ่มเพื่อให้ทำงานกับ border */
+}
+
+.image-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+.text-header {
+  font-size: xx-large;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.text-name {
+  font-size: medium;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.text-price {
+  font-size: medium;
+  font-weight: 700;
+  color: hsl(14, 86%, 42%);
+}
+
+.text-category {
+  font-size: small;
+  font-weight: 400;
+  color: hsl(12, 20%, 44%);
+}
+
+.text-cart-name {
+  font-size: medium;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.text-cart-price {
+  font-size: medium;
+  font-weight: 700;
+  color:hsl(14, 86%, 42%);
+}
+
+.text-sum-price {
+  font-size: xx-large;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.btn-custom {
+  font-size: smaller;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 45px;
+  background-color: white;
+  border: 1px solid hsl(7, 20%, 60%);
+  gap: 5px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+  transition: background 0.8s ease-in-out;
+}
+
+.btn-custom.active {
+  background-color: hsl(14, 96%, 42%);
+  border: 1px solid hsl(14, 86%, 42%);
+  color: white;
+}
+
+.btn-custom.active > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-confirm-ordered {
+  position: relative; /* เพื่อให้สามารถใช้ ::before สำหรับการกำหนดตำแหน่ง */
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: hsl(14, 86%, 42%);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden; /* ตัดส่วนที่เกินออก */
+  z-index: 0; /* เพื่อให้เนื้อหาอยู่เหนือ */
+}
+
+.btn-confirm-ordered::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* เริ่มนอกปุ่ม */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, hsl(14, 86%, 30%), hsl(14, 86%, 42%)); /* กำหนด gradient */
+  transition: left 0.6s ease-in-out; /* เพิ่มเอฟเฟกต์การเลื่อน */
+  z-index: -1; /* ทำให้ background อยู่ด้านล่างเนื้อหา */
+}
+
+.btn-confirm-ordered:hover::before {
+  left: 0; /* เลื่อน gradient มาครอบคลุมปุ่ม */
+}
+
+.btn-confirm-ordered:hover {
+  color: white; /* สีตัวหนังสือเมื่อ Hover */
+}
+
+
+.animated-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 93%;
+  border: 5px solid hsl(14, 86%, 42%);
+  pointer-events: none;
+  border-radius: 10px;
+
+  /* Default state for animation */
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  transition: clip-path 1.2s ease-in-out;
+}
+
+.animated-border.active {
+  /* Final state of animation */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.animated-border.exit {
+  /* Exit animation state */
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+.bg-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+  }
+
+  .card-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 510px;
+    min-width: 510px;
+  }
+
+
