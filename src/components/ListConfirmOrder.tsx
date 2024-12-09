@@ -19,11 +19,11 @@ export const ListConfirmOrder:React.FC<ProductProps> = ({name, price,amount,quan
             <div className="text-cart-name">{name}</div>
                 <div className="d-flex gap-3 align-items-center">
                     <div className="text-cart-price">{quantity}x</div>
-                    <div className="text-category">@${price}</div>
+                    <div className="text-category">@${price.toFixed(2)}</div>
                 </div>
             </div>
         </div>
-        <div className="text-category fw-bold">${amount}</div>
+        <div className="text-category fw-bold">${amount.toFixed(2)}</div>
     </div>
         <hr className="mx-auto" style={{width: "100%", height: "1px"}}/>
     </div>

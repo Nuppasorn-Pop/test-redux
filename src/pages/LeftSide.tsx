@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function LeftSide() {
   return (
     <div className="d-flex flex-wrap justify-content-center gap-4">
-      <div className="text-header">Desserts</div>
+      <div className="text-header-background">Desserts</div>
       <div className="row w-100 flex-grow-1">
         {dataProduct.map((item, index) => (
           <div className="col-12 col-md-6 col-xl-4 mb-4" key={index}>

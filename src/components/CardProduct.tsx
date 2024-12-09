@@ -42,14 +42,14 @@ export const CardProduct: React.FC<CardProductProps> = ({
   })
 
   return (
-    <div className="d-flex flex-column gap-2">
+    <div className="bg-custom1 d-flex flex-column gap-2">
       <div className="position-relative image-custom">
         <div className={`animated-border ${activeName ? "active" : "exit"}`} />
         <img src={image.desktop} alt={image.desktop} />
         <div className="position-absolute bottom-0 start-0 w-100 z-1">
           <div className="d-flex justify-content-center">
             <button
-              className={`btn-custom ${activeName ? "active" : ""}`}
+              className={`btn-custom ${activeName ? "active" : "exit"}`}
               tabIndex={0}
               onFocus={() => setActiveName(name)}
               onBlur={() => setActiveName(null)}

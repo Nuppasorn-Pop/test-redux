@@ -16,7 +16,7 @@ export default function RightSide() {
   return (
     <div className="bg-white p-4  rounded-4 border border-light">
       <div>
-        <div className="text-header text-danger">Your Cart ({items.length})</div>
+        <div className="text-header">Your Cart ({items.length})</div>
         {isActive ? <div className="py-4">{items.map((item,index) => <ListOrder key={index} name={item.name} price={item.price} amount={item.total} quantity={item.quantity} productId={item.id}/>)}
         <div className="d-flex justify-content-between align-items-center py-2">
           <div className="text-cart-price">Order Total</div>

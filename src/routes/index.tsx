@@ -4,8 +4,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
-        <ProductList />
+      <div className="bg-color">
+          <ProductList />
       </div>
     ),
   },

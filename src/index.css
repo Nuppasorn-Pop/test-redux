@@ -4,10 +4,33 @@
   margin: 0px;
 }
 
+.bg-color {
+  background: linear-gradient(45deg, hsl(14, 100%, 50%), hsl(327, 100%, 55%), hsl(212, 100%, 55%),hsl(268, 100%, 55%));
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.position-container {
+  padding: 100px 0;
+}
+
 .bg-custom {
   background: hsl(20, 50%, 98%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin: 70px auto;
   border-radius: 10px;
 }
 
@@ -29,14 +52,6 @@
   border-radius: inherit;
 }
 
-.image-custom img:hover {
-  overflow: hidden;
-  transition: all 1s;
-  transform: scale(1.05);
-  border: 5px solid;
-  background: linear-gradient(to right, hsl(14, 86%, 30%), hsl(14, 86%, 42%));
-  background-clip: padding-box; /* เพิ่มเพื่อให้ทำงานกับ border */
-}
 
 .image-small {
   width: 50px;
@@ -58,7 +73,43 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  /* color: white;
+  text-shadow: 0px 0px 10px hsl(14, 86%, 42%),
+  0px 0px 20px hsl(14, 86%, 42%),
+  0px 0px 40px hsl(14, 86%, 42%); */
 }
+
+
+.text-header-background {
+  font-size: 4rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  text-transform: uppercase;
+  background: url(../assets/images/image-cake-desktop.jpg);
+  background-size: contain; /* ลดการขยายเพื่อให้รูปไม่แตก */
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: text-animation 10s linear infinite;
+               
+   /* color: white; */
+  /* background-size: cover;
+  background-clip: text;
+  color: transparent; */
+}
+
+@keyframes text-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 0; /* ขยับตามความเหมาะสม */
+  }
+}
+
 
 .text-name {
   font-size: medium;
@@ -126,6 +177,53 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.btn-custom.exit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 45px; /* ให้เหมือนกับปุ่ม */
+  border: 5px solid linear-gradient(to right, hsl(14, 100%, 50%), hsl(327, 100%, 55%));
+  box-sizing: border-box;
+  z-index: 0;
+  pointer-events: none;
+  background:linear-gradient(to right, hsl(14, 100%, 50%), hsl(327, 100%, 55%));
+  opacity: 0;
+  animation: border-draw 2s linear infinite paused;
+}
+
+.btn-custom.exit:hover::before {
+  opacity: 30%;
+  animation-play-state: running;
+}
+
+
+@keyframes border-draw {
+  0% {
+    border-color: hsl(14, 86%, 42%);
+    clip-path: polygon(0% 75%, 100% 75%, 100% 100%, 0% 100%);
+  }
+  25% {
+    border-color: hsl(14, 86%, 42%);
+    clip-path: polygon(0% 75%, 100% 75%, 100% 100%, 0% 100%);
+  }
+  50% {
+    border-color: hsl(14, 86%, 42%);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+  }
+  75% {
+    border-color: hsl(14, 86%, 42%);
+    clip-path: polygon(0% 25%, 100% 25%, 100% 100%, 0% 100%);
+  }
+  100% {
+    border-color: hsl(14, 86%, 42%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
 
 .btn-confirm-ordered {
   position: relative; /* เพื่อให้สามารถใช้ ::before สำหรับการกำหนดตำแหน่ง */

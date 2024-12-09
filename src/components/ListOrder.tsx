@@ -15,7 +15,7 @@ export const ListOrder: React.FC<ProductProps> = ({name, price,amount,quantity,p
     <div>
         <div className="text-cart-name">{name}</div>
         <div className="d-flex justify-content-between align-items-start pt-2">
-            <div className="d-flex gap-3 flex-grow-1">
+            <div className="d-flex gap-3 flex-grow-1 align-items-center">
                 <div className="text-cart-price">{quantity}x</div>
                 <div className="text-category">@${price.toFixed(2)}</div>
                 <div className="text-category fw-bold">${amount.toFixed(2)}</div>
