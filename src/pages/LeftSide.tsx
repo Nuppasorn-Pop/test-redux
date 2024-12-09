@@ -1,5 +1,5 @@
 import { CardProduct } from "../components/CardProduct";
-import dataProduct from "../../data.json";
+import dataProduct from "../../assets/data.json";
 import { motion } from "framer-motion";
 
 export default function LeftSide() {
@@ -13,7 +13,7 @@ export default function LeftSide() {
       initial={{ y: 100, opacity: 0 }} // เริ่มจากล่าง (y: 100)
       animate={{ y: 0, opacity: 1 }}   // เลื่อนไปตำแหน่งปกติ (y: 0)
       transition={{ type: "spring", stiffness: 50, damping: 40 }}
-     
+
     >
             <CardProduct
               key={index}
