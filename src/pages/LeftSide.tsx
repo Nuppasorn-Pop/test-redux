@@ -1,5 +1,5 @@
 import { CardProduct } from "../components/CardProduct";
-import dataProduct from "../../assets/data.json";
+import dataProduct from "../assets/data.json";
 import { motion } from "framer-motion";
 
 export default function LeftSide() {
