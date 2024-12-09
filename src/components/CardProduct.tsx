@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "../store/slice/cart-slice";
 import { RootState } from "../store";
-import { motion } from "framer-motion";
 
 
 interface CardProductProps {
@@ -29,7 +28,7 @@ export const CardProduct: React.FC<CardProductProps> = ({
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
-    dispatch(addItemToCart({id:productId ,name,category,price, image:image.desktop , quantity: 1}))
+    dispatch(addItemToCart({id:productId ,name,category,price, image:image.desktop , quantity: 1, total:price}))
   }
 
   const handleRemoveFromCart = () => {

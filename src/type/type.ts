@@ -6,7 +6,7 @@ export interface CartItem {
     image: string,
     category: string,
     quantity: number,
-    total: number || null
+    total: number
 } 
 
 // กำหนด type ของ state
