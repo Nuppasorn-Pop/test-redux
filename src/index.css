@@ -87,7 +87,7 @@
   justify-content: flex-start;
   width: 100%;
   text-transform: uppercase;
-  background: url(src/assets/images/image-cake-desktop.jpg);
+  background: url(./assets/images/image-cake-desktop.jpg);
   background-size: contain; /* ลดการขยายเพื่อให้รูปไม่แตก */
   background-repeat: repeat-x;
   background-position: 0 0;

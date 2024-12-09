@@ -49,13 +49,11 @@ const cartSlice = createSlice({
             const id = action.payload
             const existItem = state.items.find((item) => item.id === id)
 
+
             if(existItem) {
                 state.totalAmount -= existItem.price
-
-                if (state.items.length === 0) {
-                    state.isActive = false; // ถ้าไม่มีสินค้าในตะกร้า active เป็น false
-                }
-
+                
+                
                 if(existItem.quantity === 1) {
                      // ถ้าเหลือชิ้นเดียวให้ลบออกจาก array
                      state.items = state.items.filter((item) => item.id !== id);
@@ -63,6 +61,10 @@ const cartSlice = createSlice({
                     // ลดจำนวนและปรับลด total
                     existItem.quantity--
                     existItem.total -= existItem.price
+                }
+
+                if (state.items.length === 0) {
+                    state.isActive = false; // ถ้าไม่มีสินค้าในตะกร้า active เป็น false
                 }
 
             }

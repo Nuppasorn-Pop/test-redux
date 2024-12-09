@@ -9,12 +9,12 @@ interface ProductProps {
   }
 
 export const ListConfirmOrder:React.FC<ProductProps> = ({name, price,amount,quantity,image}) => {
-  const url = `../.${image}`
+ 
   return (
     <div>
     <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex gap-3 align-items-center">
-            <div className="image-small"><img src={url} alt={image}/></div>
+            <div className="image-small"><img src={image} alt={image}/></div>
             <div className="d-flex flex-column justify-content-between py-2">
             <div className="text-cart-name">{name}</div>
                 <div className="d-flex gap-3 align-items-center">

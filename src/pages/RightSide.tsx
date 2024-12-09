@@ -12,7 +12,7 @@ export default function RightSide() {
   const handleConfirmOrdered = () => {
     dispatch(confirmOrdered())
   }
-  
+
   return (
     <div className="bg-white p-4  rounded-4 border border-light">
       <div>
