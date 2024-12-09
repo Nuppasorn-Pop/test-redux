@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "../store/slice/cart-slice";
 import { RootState } from "../store";
+
 
 
 interface CardProductProps {
@@ -45,7 +45,7 @@ export const CardProduct: React.FC<CardProductProps> = ({
     <div className="bg-custom1 d-flex flex-column gap-2">
       <div className="position-relative image-custom">
         <div className={`animated-border ${activeName ? "active" : "exit"}`} />
-        <img src={require(`${image.desktop}`)} alt={image.desktop} />
+        <img src={image.desktop} alt={image.desktop} />
         <div className="position-absolute bottom-0 start-0 w-100 z-1">
           <div className="d-flex justify-content-center">
             <button
